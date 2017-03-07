@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -176,7 +177,6 @@ return [
         // Inggo\Spel\Providers\BroadcastServiceProvider::class,
         Inggo\Spel\Providers\EventServiceProvider::class,
         Inggo\Spel\Providers\RouteServiceProvider::class,
-
     ],
 
     /*
