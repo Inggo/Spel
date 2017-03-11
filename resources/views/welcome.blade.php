@@ -21,6 +21,10 @@
                 margin: 0;
             }
 
+            body {
+                padding: 10px;
+            }
+
             .full-height {
                 height: 100vh;
             }
@@ -47,6 +51,11 @@
 
             .title {
                 font-size: 84px;
+            }
+
+            .title > img {
+                max-width: 100%;
+                height: auto;
             }
 
             .links > a {
