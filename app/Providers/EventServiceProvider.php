@@ -13,7 +13,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'Inggo\Spel\Events\SomeEvent' => [
+        'Inggo\Spel\Events\Event' => [
             'Inggo\Spel\Listeners\EventListener',
         ],
     ];
