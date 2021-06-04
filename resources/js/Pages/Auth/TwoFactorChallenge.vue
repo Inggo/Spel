@@ -1,7 +1,7 @@
 <template>
     <jet-authentication-card>
         <template #logo>
-            <jet-authentication-card-logo />
+            <app-logo class="w-32" />
         </template>
 
         <div class="mb-4 text-sm text-gray-600">
@@ -48,7 +48,7 @@
 
 <script>
     import JetAuthenticationCard from '@/Jetstream/AuthenticationCard'
-    import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo'
+    import AppLogo from '@/Spel/ApplicationLogo'
     import JetButton from '@/Jetstream/Button'
     import JetInput from '@/Jetstream/Input'
     import JetLabel from '@/Jetstream/Label'
@@ -57,7 +57,7 @@
     export default {
         components: {
             JetAuthenticationCard,
-            JetAuthenticationCardLogo,
+            AppLogo,
             JetButton,
             JetInput,
             JetLabel,
