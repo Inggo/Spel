@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Console\Commands\Setup;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class SetupCommandTest extends TestCase
 {
@@ -63,5 +64,24 @@ class SetupCommandTest extends TestCase
         $admin = User::where('email', 'admin@spel.dev')->first();
 
         $this->assertTrue($admin->isAdmin());        
+    }
+
+    public function test_successful_command_should_create_authenticable_administrator()
+    {
+        $this->artisan('spel:setup')
+            ->expectsQuestion('Enter administrator name', 'Maria Clara')
+            ->expectsQuestion('Enter administrator email address', 'mariaclara@delossantos.com')
+            ->expectsQuestion('Enter password', 'nolime1887')
+            ->assertExitCode(Setup::EXIT_SUCCESS);
+
+        // Attempt to login
+        $response = $this->post('/login', [
+            'email' => 'mariaclara@delossantos.com',
+            'password' => 'nolime1887',
+        ]);
+
+        $this->assertAuthenticated();
+
+        $this->assertTrue(Auth::user()->isAdmin());
     }
 }
