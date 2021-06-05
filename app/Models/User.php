@@ -58,4 +58,19 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function isAdministrator()
+    {
+        return $this->roles()->where('key', Role::administrator()->key)->exists();
+    }
+
+    public function isAdmin()
+    {
+        return $this->isAdministrator();
+    }
 }

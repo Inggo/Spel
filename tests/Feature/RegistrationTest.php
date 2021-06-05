@@ -11,14 +11,14 @@ class RegistrationTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_registration_screen_can_be_rendered()
+    public function test_registration_screen_cannot_be_rendered()
     {
         $response = $this->get('/register');
 
-        $response->assertStatus(200);
+        $response->assertStatus(404);
     }
 
-    public function test_new_users_can_register()
+    public function test_new_users_cannot_register()
     {
         $response = $this->post('/register', [
             'name' => 'Test User',
@@ -28,7 +28,13 @@ class RegistrationTest extends TestCase
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature(),
         ]);
 
-        $this->assertAuthenticated();
-        $response->assertRedirect(RouteServiceProvider::HOME);
+        $this->assertGuest();
+
+        $response->assertStatus(404);
+
+        $this->assertDatabaseMissing('users', [
+            'name' => 'Test User',
+            'email' => 'test@example.com'
+        ]);
     }
 }
