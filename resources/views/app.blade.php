@@ -16,6 +16,8 @@
         <!-- Scripts -->
         @routes
         <script src="{{ mix('js/app.js') }}" defer></script>
+
+        <link rel="icon" href="{{ asset('icon.svg') }}">
     </head>
     <body class="font-sans antialiased">
         @inertia

@@ -2,8 +2,8 @@
     <div>
         <jet-banner />
 
-        <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100">
+        <div class="min-h-screen bg-gray-100 dark:bg-gray-800">
+            <nav class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -11,7 +11,7 @@
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
                                 <inertia-link :href="route('dashboard')">
-                                    <jet-application-mark class="block h-9 w-auto" />
+                                    <app-logo class="block h-9 w-auto" />
                                 </inertia-link>
                             </div>
 
@@ -100,7 +100,7 @@
 
                                     <template #content>
                                         <!-- Account Management -->
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
+                                        <div class="block px-4 py-2 text-xs text-gray-400 dark:text-gray-600">
                                             Manage Account
                                         </div>
 
@@ -215,7 +215,7 @@
             </nav>
 
             <!-- Page Heading -->
-            <header class="bg-white shadow" v-if="$slots.header">
+            <header class="bg-white dark:bg-black shadow" v-if="$slots.header">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header"></slot>
                 </div>
@@ -230,7 +230,7 @@
 </template>
 
 <script>
-    import JetApplicationMark from '@/Jetstream/ApplicationMark'
+    import AppLogo from '@/Spel/ApplicationLogo'
     import JetBanner from '@/Jetstream/Banner'
     import JetDropdown from '@/Jetstream/Dropdown'
     import JetDropdownLink from '@/Jetstream/DropdownLink'
@@ -239,7 +239,7 @@
 
     export default {
         components: {
-            JetApplicationMark,
+            AppLogo,
             JetBanner,
             JetDropdown,
             JetDropdownLink,
