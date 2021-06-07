@@ -17153,7 +17153,8 @@ __webpack_require__.r(__webpack_exports__);
       return document.addEventListener('keydown', closeOnEscape);
     });
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.onUnmounted)(function () {
-      return document.removeEventListener('keydown', closeOnEscape);
+      document.removeEventListener('keydown', closeOnEscape);
+      document.body.style.overflow = null;
     });
     return {
       close: close
