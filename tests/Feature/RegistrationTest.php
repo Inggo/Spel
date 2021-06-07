@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Providers\RouteServiceProvider;
+use Inggo\Spel\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Jetstream\Jetstream;
 use Tests\TestCase;

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Inggo\Spel\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
-use App\Models\Role;
+use Inggo\Spel\Models\User;
+use Inggo\Spel\Models\Role;
 use Exception;
 
 class Setup extends Command

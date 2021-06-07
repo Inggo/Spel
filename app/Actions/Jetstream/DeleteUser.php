@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Jetstream;
+namespace Inggo\Spel\Actions\Jetstream;
 
 use Laravel\Jetstream\Contracts\DeletesUsers;
 

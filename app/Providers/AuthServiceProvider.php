@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Inggo\Spel\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'App\Models\Model' => 'App\Policies\ModelPolicy',
+        // 'Inggo\Spel\Models\Model' => 'Inggo\Spel\Policies\ModelPolicy',
     ];
 
     /**

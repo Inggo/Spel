@@ -5,8 +5,8 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use App\Console\Commands\Setup;
-use App\Models\User;
+use Inggo\Spel\Console\Commands\Setup;
+use Inggo\Spel\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class SetupCommandTest extends TestCase

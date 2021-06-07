@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Inggo\Spel\Providers;
 
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\ServiceProvider;

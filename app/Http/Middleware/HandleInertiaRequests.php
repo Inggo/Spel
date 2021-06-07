@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Inggo\Spel\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Inertia\Middleware;

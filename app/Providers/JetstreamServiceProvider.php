@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Providers;
+namespace Inggo\Spel\Providers;
 
-use App\Actions\Jetstream\DeleteUser;
+use Inggo\Spel\Actions\Jetstream\DeleteUser;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Jetstream\Jetstream;
 

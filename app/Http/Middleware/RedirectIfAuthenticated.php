@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Inggo\Spel\Http\Middleware;
 
-use App\Providers\RouteServiceProvider;
+use Inggo\Spel\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

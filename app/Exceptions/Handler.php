@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions;
+namespace Inggo\Spel\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;

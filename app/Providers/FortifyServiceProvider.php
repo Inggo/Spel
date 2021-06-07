@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Providers;
+namespace Inggo\Spel\Providers;
 
-use App\Actions\Fortify\CreateNewUser;
-use App\Actions\Fortify\ResetUserPassword;
-use App\Actions\Fortify\UpdateUserPassword;
-use App\Actions\Fortify\UpdateUserProfileInformation;
+use Inggo\Spel\Actions\Fortify\CreateNewUser;
+use Inggo\Spel\Actions\Fortify\ResetUserPassword;
+use Inggo\Spel\Actions\Fortify\UpdateUserPassword;
+use Inggo\Spel\Actions\Fortify\UpdateUserProfileInformation;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
