@@ -29,3 +29,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
         'auth' => auth()->user()
     ]);
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    return Route::resource('users', \Inggo\Spel\Http\Controllers\UserManagementController::class);
+});

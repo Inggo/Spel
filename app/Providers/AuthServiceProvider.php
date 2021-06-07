@@ -4,6 +4,8 @@ namespace Inggo\Spel\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Inggo\Spel\Models\User;
+use Inggo\Spel\Policies\UserPolicy;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -14,6 +16,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'Inggo\Spel\Models\Model' => 'Inggo\Spel\Policies\ModelPolicy',
+        User::class => UserPolicy::class,
     ];
 
     /**

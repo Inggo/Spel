@@ -59,16 +59,11 @@ class Setup extends Command
         // Create roles
         $this->info(__('spel.setup.activity.roles'));
 
-        foreach (config('spel.roles') as $key => $role) {
-            Role::create([
-                'key'  => $key,
-                'name' => $role
-            ]);
-
+        Role::setupRolesFromConfig(function ($role) {
             $this->info(__('spel.setup.activity.role', [
                 'role'  => $role
             ]));
-        }
+        });
 
         $admin = Role::administrator();
         
@@ -76,6 +71,7 @@ class Setup extends Command
             'role' => $admin->name,
             'name' => $user->name
         ]));
+
         $user->roles()->save($admin);
 
         $this->info(__('spel.setup.success'));
