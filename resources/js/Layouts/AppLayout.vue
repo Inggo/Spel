@@ -20,6 +20,10 @@
                                 <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </jet-nav-link>
+
+                                <jet-nav-link v-if="route('users.index')" :href="route('users.index')" :active="route().current('users.index')">
+                                    User Management
+                                </jet-nav-link>
                             </div>
                         </div>
 

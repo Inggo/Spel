@@ -14,7 +14,11 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
         <!-- Scripts -->
-        @routes
+        @if (Auth::check() && Auth::user()->isAdmin())
+            @routes(['admin', 'user'])
+        @else
+            @routes()
+        @endif
         <script src="{{ mix('js/app.js') }}" defer></script>
 
         <link rel="icon" href="{{ asset('icon.svg') }}">

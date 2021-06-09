@@ -19,5 +19,8 @@ return [
             'admin' => 'Error on administration assignment: :message',
         ],
         'success' => 'Setup complete!',
+    ],
+    'warnings' => [
+        'admin_role_not_found' => 'Administrator role not found'
     ]
 ];

@@ -9,6 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Log;
 
 class User extends Authenticatable
 {
@@ -66,7 +68,34 @@ class User extends Authenticatable
 
     public function isAdministrator()
     {
-        return $this->roles()->where('key', Role::administrator()->key)->exists();
+        try {
+            $admin = Role::administrator();
+        } catch (ModelNotFoundException $e) {
+            // Administrator role does not exist
+
+            // Log the stack trace
+            Log::error(
+                sprintf("\n\r%s: %s in %s:%d\n\r",
+                    get_class($e),
+                    $e->getMessage(),
+                    $e->getFile(),
+                    $e->getLine()
+                )
+            );
+
+            // Log a warning
+            Log::warning(
+                sprintf("\n\r%s (%s:%d)\n\r",
+                    __('spel.warnings.admin_role_not_found'),
+                    __FILE__,
+                    __LINE__
+                )
+            );
+
+            return false;
+        }
+
+        return $this->roles()->where('key', $admin->key)->exists();
     }
 
     public function isAdmin()
